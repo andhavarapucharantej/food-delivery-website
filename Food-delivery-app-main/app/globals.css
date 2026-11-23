@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E23744;
+  --color-veg: #2E7D32;
+  --color-delivery: #2E7D32;
+  --color-bg-light: #FAF9F6;
+  --color-text-main: #1C1C1C;
+  --color-text-muted: #696969;
+  --color-border-subtle: #E8E8E8;
+  --radius-custom: 8px;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1C1C1C;
+}
+
+body {
+  color: var(--foreground);
+  background: #FAF9F6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3D Animation Utilities & Keyframes */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotateX(5deg) rotateY(-4deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(-3deg) rotateY(6deg);
+  }
+  75% {
+    transform: translateY(-6px) rotateX(4deg) rotateY(-3deg);
+  }
+}
+
+@keyframes spinCube {
+  0% {
+    transform: rotateX(-15deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(15deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFly {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-24px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-float-3d {
+  animation: float3d 5s ease-in-out infinite;
+}
+
+.animate-spin-cube {
+  animation: spinCube 12s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.animate-radar-ping {
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
